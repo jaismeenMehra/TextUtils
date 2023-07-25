@@ -8,7 +8,8 @@ function App() {
   return (
     <>
   {/* props */}
-  <Navbar brand="TextUtils" about ="About Us"/>
+  {/* <Navbar title="TextUtils" about ="About Us"/> */}
+  <Navbar/>
     
     </>
   );

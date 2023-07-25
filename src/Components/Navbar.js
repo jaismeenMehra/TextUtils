@@ -19,7 +19,7 @@ export default function Navbar(props) {
       </button>
       <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
         <a className="navbar-brand" href="/">
-          {props.brand}
+          {props.title}
         </a>
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
@@ -57,5 +57,10 @@ export default function Navbar(props) {
 }
 
 
-Navbar.proptypes ={brand: PropTypes.string,
+Navbar.proptypes ={title: PropTypes.string,
                     about: PropTypes.string}
+
+Navbar.defaultProps ={
+    title: 'Set title',
+    about:  'Set About'
+}
