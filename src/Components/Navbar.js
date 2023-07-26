@@ -27,13 +27,42 @@ export default function Navbar(props) {
               Home
             </a>
           </li>
+
+
+          <li className="nav-item dropdown">
+    <a
+      className="nav-link dropdown-toggle"
+      href="/"
+      role="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Available Features
+    </a>
+    <ul className="dropdown-menu">
+      <li>
+        <a className="dropdown-item" href="/">
+          UpperCase to LowerCase
+        </a>
+      </li>
+      <li>
+        <a className="dropdown-item" href="/">
+          LowerCase to UpperCase
+        </a>
+      </li>
+      
+      <li>
+        <a className="dropdown-item" href="/">
+          Text to Voice
+        </a>
+      </li>
+    </ul>
+  </li>
+
+
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              Features
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/">
+            <a className="nav-link" href="/
+            ">
               {props.about}
             </a>
           </li>
