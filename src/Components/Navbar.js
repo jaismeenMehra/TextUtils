@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
   return (
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <div className="container-fluid">
       <button
         className="navbar-toggler"
@@ -46,7 +46,7 @@ export default function Navbar(props) {
             placeholder="Search"
             aria-label="Search"
           />
-          <button className="btn btn-outline-success" type="submit">
+          <button className="btn btn-outline-primary" type="submit">
             Search
           </button>
         </form>
@@ -57,9 +57,15 @@ export default function Navbar(props) {
 }
 
 
-Navbar.proptypes ={title: PropTypes.string,
-                    about: PropTypes.string}
 
+// prop --> properties
+// proptypes prevent that only valid type would be eneterd
+Navbar.propTypes ={title: PropTypes.string.isRequired,
+                    about: PropTypes.string.isRequired
+}
+
+
+// default props , will help when we don't pass props
 Navbar.defaultProps ={
     title: 'Set title',
     about:  'Set About'
