@@ -11,10 +11,28 @@ export default function TextForm(props) {
   };
   
 
-  const narrate = () => {
+  const handleNarrate = () => {
     let msg = new SpeechSynthesisUtterance();
     msg.text = text;
     window.speechSynthesis.speak(msg);
+  }
+
+
+  const handleClear=()=>{
+    setText("");
+  }
+
+  const handleCopy =()=>{
+    let text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  }
+
+
+  const handleExtraSpaces=()=>{
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+
   }
 
   const handleOnChange = (event) => {
@@ -37,17 +55,26 @@ export default function TextForm(props) {
             rows="8"
           />
         </div>
-        <button className="btn btn-primary" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
           Convert to upper case
         </button>
-        <button className="btn btn-primary mx-2" onClick={handlelowClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handlelowClick}>
           Convert to lower case
         </button>
-        <button className="btn btn-primary mx-2" onClick={narrate}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleNarrate}>
           Narrate
         </button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleClear}>
+          Clear Text
+        </button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
+          Copy Text
+        </button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>
+          Remove Extra Spaces
+        </button>
       </div>
-      <div className="container my-3">
+      <div className="container my-2">
         <hr />
         <h3>Text Summary</h3>
         <p>{text.split(" ").length} words and {text.length} characters.</p>
