@@ -1,64 +1,67 @@
-import React,{useState} from "react";
+import React from "react";
 
-export default function About() {
+export default function About(props) {
 
-  const [myStyle, setMyStyle] = useState({
-    color: 'black',
-    backgroundColor: 'white',
-  });
+  // const [myStyle, setMyStyle] = useState({
+  //   color: 'black',
+  //   backgroundColor: 'white',
+  // });
 
-  const [innerStyle, setInnerStyle] = useState();
+  // const [innerStyle, setInnerStyle] = useState();
 
-  const [btnText,setBtnText] = useState("Enable dark mode");
-
-
-  const toggleStyle =()=>{
-    if(myStyle.color ==='black'){
-      setMyStyle({
-        color: '#FFFFFF',
-        backgroundColor: '#121212',
-      })
-
-      setInnerStyle({
-        color: 'white',
-        backgroundColor: 'rgb(127, 127, 127)'
-      })
+  // const [btnText,setBtnText] = useState("Enable dark mode");
 
 
+  // const toggleStyle =()=>{
+  //   if(myStyle.color ==='black'){
+  //     setMyStyle({
+  //       color: '#FFFFFF',
+  //       backgroundColor: '#121212',
+  //     })
 
-      setBtnText("Enable light mode");
-    }
+  //     setInnerStyle({
+  //       color: 'white',
+  //       backgroundColor: 'rgb(127, 127, 127)'
+  //     })
 
-    else{
-      setMyStyle({
-        color: 'black',
-        backgroundColor: 'white',
-      })
 
-      setInnerStyle({
-        color: 'black',
-        backgroundColor: 'white'
-      })
 
-      setBtnText("Enable dark mode");
-    }
-  }
+  //     setBtnText("Enable light mode");
+  //   }
+
+  //   else{
+  //     setMyStyle({
+  //       color: 'black',
+  //       backgroundColor: 'white',
+  //     })
+
+  //     setInnerStyle({
+  //       color: 'black',
+  //       backgroundColor: 'white'
+  //     })
+
+  //     setBtnText("Enable dark mode");
+  //   }
+  // }
 
   return (
-    
-    <div className="container" style={myStyle}>
+    <>
+    {/* <div className="container" style={myStyle}> */}
       <h1 className="my-3">About Us</h1>
       <div className="accordion" id="accordionExample">
-        <div className="accordion-item"  style={innerStyle}>
+        <div className={`accordion-item text-${props.mode==='light'? 'dark': 'light'}`}
+          style={{backgroundColor: `${props.mode==="dark"? "rgb(127, 127, 127)" : 'white'}`}}
+         
+         >
           <h2 className="accordion-header">
             <button
-              className="accordion-button"
+              className={`accordion-button bg-${props.mode} text-${props.mode==='light'? 'dark': 'light'}`}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
-              style={innerStyle}
+              // style={innerStyle}
               >
               Contact Us
             </button>
@@ -74,16 +77,19 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={innerStyle}>
+        <div className="accordion-item" 
+        style={{backgroundColor: `${props.mode==="dark"? "rgb(127, 127, 127)" : 'white'}`}}
+        // style={innerStyle}
+        >
           <h2 className="accordion-header">
             <button
-              className="accordion-button collapsed"
+              className={`accordion-button collapsed bg-${props.mode} text-${props.mode==='light'? 'dark': 'light'}`}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
-              style={innerStyle}
+              // style={innerStyle}
               >
               Available Features
             </button>
@@ -99,16 +105,19 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={innerStyle}>
+        <div className="accordion-item"
+        style={{backgroundColor: `${props.mode==="dark"? "rgb(127, 127, 127)" : 'white'}`}}
+        //  style={innerStyle}
+         >
           <h2 className="accordion-header">
             <button
-              className="accordion-button collapsed"
+              className={`accordion-button collapsed bg-${props.mode} text-${props.mode==='light'? 'dark': 'light'}`}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
-              style={innerStyle}
+              // style={innerStyle}
               >
               Subscribe to our Blogs
             </button>
@@ -124,8 +133,9 @@ export default function About() {
           </div>
         </div>
       </div>
-      <button className="btn btn-primary my-3"  onClick={toggleStyle}>{btnText}</button>
-    </div>
+      {/* <button className="btn btn-primary my-3"  onClick={toggleStyle}>{btnText}</button> */}
+    {/* </div> */}
+              </>
     
   );
 }

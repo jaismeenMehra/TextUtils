@@ -48,7 +48,7 @@ export default function TextForm(props) {
         <h1 className="my-3">{props.heading}</h1>
         <div className="mb-3">
           <textarea
-            className="form-control"
+            className={`form-control text-${props.mode==='light'? 'dark': 'light'} bg-${props.mode}`}
             value={text}
             onChange={handleOnChange}
             id="myBox"
