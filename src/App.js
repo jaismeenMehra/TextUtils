@@ -51,7 +51,7 @@ function App() {
 
         <div className="container">
           <Routes>
-            <Route path="/about" element={<About mode={mode} />}/>
+            <Route exact path="/about" element={<About mode={mode} />}/>
             
 
             <Route exact path="/" element={<TextForm
@@ -63,8 +63,11 @@ function App() {
           </Routes>
         </div>
       </Router>
+{/*       
+      <div className="container">
 
       <About mode={mode} />
+      </div> */}
     </>
   );
 }
