@@ -49,10 +49,16 @@ export default function About(props) {
     {/* <div className="container" style={myStyle}> */}
       <h1 className="my-3">About Us</h1>
       <div className="accordion" id="accordionExample">
+
+
+        
         <div className={`accordion-item text-${props.mode==='light'? 'dark': 'light'}`}
           style={{backgroundColor: `${props.mode==="dark"? "rgb(127, 127, 127)" : 'white'}`}}
          
          >
+
+
+
           <h2 className="accordion-header">
             <button
               className={`accordion-button bg-${props.mode} text-${props.mode==='light'? 'dark': 'light'}`}
@@ -71,13 +77,16 @@ export default function About(props) {
             className="accordion-collapse collapse show"
             data-bs-parent="#accordionExample"
             >
-            <div className="accordion-body">
+            <div className="accordion-body ">
               Contact Us through form mentioned in the website itself or drop us a mail on textUtils123@gmail.com.
               For further more details you can connect with us Social Media Platforms.
             </div>
           </div>
         </div>
-        <div className="accordion-item" 
+
+
+
+        <div className={`accordion-item text-${props.mode==='light'? 'dark': 'light'}`}
         style={{backgroundColor: `${props.mode==="dark"? "rgb(127, 127, 127)" : 'white'}`}}
         // style={innerStyle}
         >
@@ -105,8 +114,11 @@ export default function About(props) {
             </div>
           </div>
         </div>
-        <div className="accordion-item"
-        style={{backgroundColor: `${props.mode==="dark"? "rgb(127, 127, 127)" : 'white'}`}}
+
+
+
+        <div className={`accordion-item text-${props.mode==='light'? 'dark': 'light'}`}
+          style={{backgroundColor: `${props.mode==="dark"? "rgb(127, 127, 127)" : 'white'}`}}
         //  style={innerStyle}
          >
           <h2 className="accordion-header">

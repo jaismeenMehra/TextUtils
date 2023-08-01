@@ -47,6 +47,14 @@ export default function TextForm(props) {
   // text = "new text"; wrong way to update text
   // setText("new text");
 
+
+  const getWordCount = () => {
+    if (!text.trim()) {
+      return 0; 
+    }
+    return text.trim().split(/\s+/).length;
+  };
+
   return (
     <>
       <div className="container">
@@ -82,7 +90,7 @@ export default function TextForm(props) {
       <div className="container my-2">
         <hr />
         <h3>Text Summary</h3>
-        <p>{text.split(" ").length} words and {text.length} characters.</p>
+        <p>{getWordCount()} words and {text.length} characters.</p>
         <p>{(0.003* text.split(" ").length)} Minutes Read</p>
         <hr />
         <h3>Preview</h3>
